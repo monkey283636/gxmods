@@ -31,7 +31,7 @@ def Write(data, indent, file_name="manifest.json"):
                 "license": "license.txt",
                 "payload": [],
                 "schema_version": 1,
-                "version": "1.0"
+            "version": "1.0"
             }
         }
 
@@ -181,7 +181,7 @@ if Exists("wallpaper/dark.png"):
         "text_color": "#FFFFFF",
         "text_shadow": "#757575"
     }
-else:
+elif Exists("wallpaper/video.webm") and not Exists("wallpaper/dark.png"):
     print("Adding Wallpaper: DARK")
     data["wallpapers"]["dark"] = {
         "image": "wallpaper/video.webm",
@@ -197,7 +197,7 @@ if Exists("wallpaper/light.png"):
         "text_color": "#FFFFFF",
         "text_shadow": "#0B000E"
     }
-else:
+elif Exists("wallpaper/video.webm") and not Exists("wallpaper/light.png"):
     print("Adding Wallpaper: LIGHT")
     data["wallpapers"]["LIGHT"] = {
         "image": "wallpaper/video.webm",
